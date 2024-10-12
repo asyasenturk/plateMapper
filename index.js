@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 
 const app = express();
@@ -42,4 +43,30 @@ const PORT = 8585;
 
 app.listen(PORT, () => {
   console.log(`Sunucu şu portta çalışıyor : ${PORT}`);
+=======
+const express = require('express');
+const mongoose = require('mongoose');
+const plateRoutes = require('./routes/plateRoutes');
+
+const app = express();
+
+// Body parsing middleware (JSON verilerini ayrıştırmak için)
+app.use(express.json());
+
+// MongoDB Atlas bağlantısı
+mongoose.connect('mongodb+srv://asyasenturk:12345@asya.k5i1t.mongodb.net/plateMapper?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB bağlantısı başarılı!'))
+.catch(err => console.error('MongoDB bağlantı hatası:', err));
+
+// API rotaları
+app.use('/api', plateRoutes);
+
+// Sunucuyu başlat
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Sunucu ${PORT} portunda çalışıyor...`);
+>>>>>>> 647362b (backend ilk kısım)
 });

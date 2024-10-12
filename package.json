@@ -1,6 +1,7 @@
 {
   "name": "plate-mapper",
   "version": "1.0.0",
+<<<<<<< HEAD
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,4 +24,24 @@
     "url": "plateMapper"
   },
   "description": ""
+=======
+  "description": "Plaka yönetimi API projesi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^8.6.0",
+    "express": "^4.21.1",
+    "mongoose": "^5.13.22",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "author": "",
+  "license": "ISC"
+>>>>>>> 647362b (backend ilk kısım)
 }
